@@ -55,37 +55,29 @@ function displayGiphy() {
         console.log(giphyTopic)
         // Goal: Display giphy response on the page for the particular topic that was clicked on
 
-        // Step 1) Create a div element that will contain all the giphy data 
-        // var topicDiv = $("<div>");
-        // $("<div>").addClass('topicDiv');
-
-
-        //   Step 2) Create a giphy element and rating
         var results = response.data;
 
+        // Step 1) Create a div element that will contain all the giphy data 
         for (var i = 0; i < results.length; i++) {
             var topicDiv = $("<div>");
             topicDiv.addClass('topicDiv');
+
+            // Step 2) Wrap giphy elements around <img> tag and <p> tag for ratings to display on screen 
             var giphyElement = $("<img>");
             var p = $("<p>");
 
             p.text(results[i].rating);
 
             giphyElement.addClass("giphyElement");
-            giphyElement.attr("src", results[i].images.fixed_height_small_still.url);
-          
+            giphyElement.attr("src", results[i].images.fixed_height_small.url);
 
-            //  Step 3) Attach giphy element to parent div created in step 1
+
+            //  Step 3) Attach giphy and rating elements to parent div created in step 1
             topicDiv.append(giphyElement);
-            console.log(topicDiv);
-
-            topicDiv.append(p);
+            topicDiv.prepend(p);
 
             // Step 4) Attach to parent container
             $("#giphy-container").append(topicDiv);
-
-                
-
         }
     });
 }
