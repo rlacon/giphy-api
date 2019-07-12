@@ -1,5 +1,5 @@
 // Empty array to store our topic buttons in
-var topics = ["Homer Simpson", "Marge Simpson", "Bart Simpson", "Lisa Simpson", "Mr. Burns", "Groundskeeper Willie", "Comic Book Guy", "Grandpa Simpson", "Ned Flanders", "Milhouse", "Nelson Muntz"];
+var topics = ["Homer Simpson", "Marge Simpson", "Bart Simpson", "Lisa Simpson", "Maggie Simpson", "Mr. Burns", "Groundskeeper Willie", "Comic Book Guy", "Grandpa Simpson", "Steamed Hams", "Ned Flanders", "Milhouse", "Kang and Kodos"];
 
 $(document).ready(function () {
 
@@ -73,7 +73,7 @@ $(document).ready(function () {
             topicsDiv.text(topics[i]);
 
             // Adds a class of movie to our button
-            topicsDiv.addClass("topic_button");
+            topicsDiv.addClass("topic_button p-2 m-1");
 
             // Added a data-attribute
             topicsDiv.attr("data-name", topics[i]);
