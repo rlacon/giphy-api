@@ -33,6 +33,7 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
         }).then(function (response) {
+            console.log(response);
 
             // Goal: Display giphy response on the page for the particular topic that was clicked on
             var results = response.data;
